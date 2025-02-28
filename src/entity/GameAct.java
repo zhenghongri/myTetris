@@ -7,11 +7,11 @@ import config.GameConfig;
 
 public class GameAct {
 	/**
-	 * ·½¿éÊı×é
+	 * æ–¹å—æ•°ç»„
 	 */
 	private Point[] actPoints=null;
 	/**
-	 * ·½¿é±àºÅ
+	 * æ–¹å—ç¼–å·
 	 */
 	private int typeCode;
 	
@@ -23,7 +23,7 @@ public class GameAct {
 	private static final List<Point[]> TYPE_CONFIG=GameConfig.getSystemConfig().getTypeConfig();
 	private static final List<Boolean> TYPE_Round=GameConfig.getSystemConfig().getTypeRound();
 	/*static{
-		//TODO Ğ´ÈëÅäÖÃÎÄ¼ş
+		//TODO å†™å…¥é…ç½®æ–‡ä»¶
 		TYPE_CONFIG=new ArrayList<Point[]>(7);
 		TYPE_CONFIG.add(new Point[]{new Point(4,0),new Point(3,0),new Point(5,0),new Point(6,0)});
 		TYPE_CONFIG.add(new Point[]{new Point(4,0),new Point(3,0),new Point(5,0),new Point(4,1)});
@@ -55,17 +55,17 @@ public class GameAct {
 		return actPoints;
 	}
 	/**
-	 * ·½¿éÒÆ¶¯
-	 * @param moveX XÖáÆ«ÒÆÁ¿
-	 * @param moveY YÖáÆ«ÒÆÁ¿
+	 * æ–¹å—ç§»åŠ¨
+	 * @param moveX Xè½´åç§»é‡
+	 * @param moveY Yè½´åç§»é‡
 	 */
 	public boolean move(int moveX,int moveY,boolean[][] gameMap){
 		
 		
 		
-		//ÒÆ¶¯´¦Àí
+		//ç§»åŠ¨å¤„ç†
 		for (int i = 0; i < actPoints.length; i++) {
-			int newX=actPoints[i].x+moveX;
+			int newX = actPoints[i].x+moveX;
 			int newY=actPoints[i].y+moveY;
 			
 			if (isOverZone(newX, newY, gameMap)) {
@@ -79,9 +79,9 @@ public class GameAct {
 		return true;
 	}
 	/**
-	 * ·½¿éĞı×ª
+	 * æ–¹å—æ—‹è½¬
 	 * 
-	 * Ë³Ê±ÕëËã·¨¹«Ê½
+	 * é¡ºæ—¶é’ˆç®—æ³•å…¬å¼
 	 * A.x=o.y+o.x-B.y
 	 * A.y=o.y-o.x+B.x
 	 */
@@ -107,7 +107,7 @@ public class GameAct {
 		}
 	}
 	/**
-	 * ÅĞ¶ÏÊÇ·ñ³¬³ö±ß½ç
+	 * åˆ¤æ–­æ˜¯å¦è¶…å‡ºè¾¹ç•Œ
 	 * @param x
 	 * @param y
 	 * @return
@@ -117,7 +117,7 @@ public class GameAct {
 		
 	}
 	/**
-	 *»ñÈ¡·½¿é±àºÅ
+	 *è·å–æ–¹å—ç¼–å·
 	 * @return actCode
 	 */
 	public int getTypeCode() {
